@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head><title>Services</title></head>
+<body>
+<h1>Services</h1>
+<ul>
+    {%- for service in collections.service -%}
+        <li><a href="{{ service.url }}">{{ service.data.title }}</a></li>
+    {%- endfor -%}
+</ul>
+</body>
+</html>
