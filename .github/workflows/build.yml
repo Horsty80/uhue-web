@@ -1,5 +1,6 @@
 name: Build Website
 on:
+  repository_dispatch:
   push:
     branches:
       - main
