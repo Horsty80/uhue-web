@@ -6,14 +6,16 @@
   "type": "commonjs",
   "scripts": {
     "build:website": "node 11ty.js",
-    "build-git": "env NODE_ENV=production npx eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:git": "env NODE_ENV=production npx eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "env NODE_ENV=localhost eleventy --serve"
   },
   "keywords": [],
   "author": "Cyril Hue",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "axios": "^0.27.2",
     "express": "^4.18.1",
     "node-fetch": "2"
   }
