@@ -1,3 +1,7 @@
 node_modules/
-.vscode
-public
+public/
+.env
+.vscode/
+.DS_Store
+*git/
+_tmp/

@@ -5,10 +5,13 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "build:website": "node 11ty.js",
     "build:git": "env NODE_ENV=production npx eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "env NODE_ENV=localhost eleventy --serve"
+    "start": "npm-run-all --parallel css eleventy browsersync",
+    "eleventy": "eleventy --watch",
+    "debug": "set DEBUG=* & eleventy",
+    "css": "postcss src/static/css/tailwind.css --o public/static/css/style.css --watch",
+    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production tailwindcss -i src/static/css/tailwind.css -o public/static/css/style.css",
+    "browsersync": "browser-sync start --server public --files public --port 8080 --no-notify --no-open"
   },
   "keywords": [],
   "author": "Cyril Hue",
@@ -18,5 +21,16 @@
     "axios": "^0.27.2",
     "express": "^4.18.1",
     "node-fetch": "2"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.8",
+    "browser-sync": "^2.27.10",
+    "cross-env": "^7.0.3",
+    "luxon": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.7"
   }
 }

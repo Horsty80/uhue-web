@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #e3ecf4;
+  --blue: #0034ff;
+  --blue-light: #0af3f4;
+}
+
+@font-face {
+  font-family: regularFont;
+  src: url("fonts/montserrat.regular.ttf");
+}
+@font-face {
+  font-family: boldFont;
+  src: url("css/fonts/montserrat.bold.ttf");
+}
+
+/*Your Custom CSS Goes here*/
+h1 {
+  @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+}
+
+h3 {
+  @apply text-2xl font-bold mb-3;
+}
+
+/* Syntax Highlighting*/
+
+body :not(pre) > code[class*="language-"],
+body pre[class*="language-"] {
+  @apply bg-gray-800;
+}
+
+img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 6/4;
+  object-fit: cover;
+  margin: 2rem auto;
+}
