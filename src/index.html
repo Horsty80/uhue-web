@@ -5,12 +5,15 @@ path: home
 ---
 
 <div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
+  {# <h1 class="flex align-middle">
+    Welcome to 
     <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
+      {{ title }}
+    </strong> #}
+    {% if site.logo %}
+				<img class="w-auto" src="{{ site.logo.url }}" alt="{{ site.logo.label }}" title="{{ site.title }}" />
+			{% endif %}
+  {# </h1> #}
 
   <p>
     Get Started by selecting your universe.

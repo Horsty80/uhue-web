@@ -8,5 +8,6 @@ module.exports = async () => {
       console.error(err);
     })
     .then((res) => res.json());
+  console.log(`Find ${result.data.length} services`);
   return result.data;
 };

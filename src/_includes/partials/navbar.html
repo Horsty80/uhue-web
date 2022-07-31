@@ -3,7 +3,10 @@
         <!--Logo etc-->
         <div class="flex items-center">
             <a href="/" class="text-indigo-500 font-bold text-lg">
-                Logo</a>
+			{% if site.logo %}
+				<img class="h-8 w-auto sm:h-10" src="{{ site.logo.url }}" alt="{{ site.logo.label }}" title="{{ site.title }}" />
+            {% endif %}
+            </a>
         </div>
 
         <!--Toggle button (hidden on large screens)-->
@@ -17,12 +20,12 @@
         <!--Menu-->
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto text-center " :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" x-show.transition="true">
 
-            {% if navigation.items %}
+            {% if services %}
 
                 <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
-                    {% for item in navigation.items %}
+                    {% for item in services %}
                         <li class="nav__item mr-3">
-                            <a @click="isOpen = false" class="text-ml inline-block text-gray-500 no-underline hover:text-indigo-500 py-2 px-4" href="{{ item.url }}">{{ item.text }}</a>
+                            <a @click="isOpen = false" class="text-ml inline-block text-gray-500 no-underline hover:text-indigo-500 py-2 px-4" href="services/{{ item.attributes.slug }}.html">{{ item.attributes.title }}</a>
                         </li>
                     {% endfor %}
                 </ul>
