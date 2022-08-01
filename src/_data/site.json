@@ -3,5 +3,8 @@
   "logo": {
     "url": "static/img/web3-inline-logo.svg",
     "label": "label"
+  },
+  "favicon": {
+    "url": "static/img/web3-small-logo.svg"
   }
 }

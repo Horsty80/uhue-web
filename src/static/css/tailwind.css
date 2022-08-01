@@ -28,6 +28,33 @@ h3 {
   @apply text-2xl font-bold mb-3;
 }
 
+* {
+  @apply m-0 p-0 box-border;
+}
+
+a {
+  @apply no-underline;
+}
+li {
+  @apply list-none;
+}
+
+.navLink {
+  @apply text-indigo-500;
+}
+.navLink-li {
+  @apply hover:bg-indigo-200 hover:rounded-md hover:transition-all
+  py-1 px-4;
+}
+.sub-navLink-li {
+  @apply text-center py-[0.5em] px-[1em] w-[8em] hover:bg-indigo-200;
+}
+.navMenu {
+  @apply gap-[1em]  py-4 px-0 right-0 left-0 text-center text-lg 
+  hidden absolute 
+  md:relative md:flex;
+}
+
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],

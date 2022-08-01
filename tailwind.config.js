@@ -5,7 +5,13 @@ module.exports = {
       center: true,
     },
     extend: {
-      colors: {},
+      colors: {
+        "uhue-gray": "#E3ECF4",
+        "uhue-dark": "#0E1531",
+        "uhue-indigo": "#7416EC",
+        "uhue-bluegreen": "#0F8094",
+        "uhue-lightblue": "#00D9FE",
+      },
     },
   },
   variants: {},
