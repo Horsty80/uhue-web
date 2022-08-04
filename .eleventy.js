@@ -12,7 +12,6 @@ module.exports = function (eleventyConfig) {
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
 
-  // eleventyConfig.addPassthroughCopy("./src/static/css");
   eleventyConfig.addPassthroughCopy("./src/static/img");
   eleventyConfig.addWatchTarget("./src/static/css/");
 
