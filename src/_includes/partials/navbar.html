@@ -1,9 +1,9 @@
-<nav class="flex items-center justify-between p-5 text-indigo-500">
+<nav class="flex items-center justify-between pb-5 pl-5 text-uhue-indigo bg-white">
   <!-- LOGO -->
-  <a href="/" class="text-indigo-500 font-bold text-lg">
+  <a href="/" class="text-uhue-indigo font-bold text-lg">
     {% if site.logo %}
     <img
-      class="h-8 w-auto sm:h-14"
+      class="w-auto h-14"
       src="{{ site.favicon.url }}"
       alt="{{ site.logo.label }}"
       title="{{ site.title }}"
@@ -14,25 +14,29 @@
   <ul class="nav-links">
     <!-- USING CHECKBOX HACK -->
     <input class="hidden peer" type="checkbox" id="checkbox_toggle" />
-    <label for="checkbox_toggle" class="block md:hidden text-4xl select-none">&#9776;</label>
+    <label
+      for="checkbox_toggle"
+      class="peer-checked:text-white peer-checked:bg-uhue-dark p-6 block md:hidden text-4xl select-none"
+      >&#9776;</label
+    >
     <!-- NAVIGATION MENUS -->
-    <div class="navMenu peer-checked:block bg-uhue-gray text-white md:text-uhue-indigo md:bg-white">
-      <li>
+    <div class="navMenu peer-checked:block">
+      <li class="py-2">
         <a class="navLink group" href="/"
           ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Home</span></a
         >
       </li>
-      <li>
+      <li class="py-2">
         <a class="navLink group" href="/about"
           ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">About</span></a
         >
       </li>
-      <li>
+      <li class="py-2">
         <a class="navLink group" href="/services"
           ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Services</span></a
         >
       </li>
-      <li>
+      <li class="py-2">
         <a class="navLink group" href="/contact"
           ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Contact</span></a
         >

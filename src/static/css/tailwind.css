@@ -39,17 +39,18 @@ li {
   @apply list-none;
 }
 
+/* Navbar */
 .navLink {
-  @apply text-indigo-500 px-4 p-2;
+  @apply text-white md:text-uhue-indigo px-4 p-2;
 }
 .underlineNavLink {
-  @apply bg-left-bottom bg-gradient-to-r from-indigo-500 to-indigo-500 bg-[length:0%_2px] 
-  bg-no-repeat transition-all duration-500 ease-out;
+  @apply bg-left-bottom bg-gradient-to-r from-white to-white md:from-uhue-indigo md:to-uhue-indigo 
+  bg-[length:0%_2px] bg-no-repeat transition-all duration-500 ease-out;
 }
 
 .navMenu {
-  @apply gap-[1em]  py-4 px-0 right-0 left-0 text-center text-xl 
-  hidden absolute 
+  @apply gap-[1em] md:mt-0 py-4 px-2 right-0 left-0 text-center text-xl 
+  hidden absolute bg-uhue-dark md:bg-white text-white md:text-uhue-indigo
   md:relative md:flex;
 }
 
