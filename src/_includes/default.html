@@ -8,7 +8,7 @@
     {% if description %}
     <meta name="description" content="{{description}}" />
     {% endif %} {% block head %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
   </head>
   <body>
     {% include "./partials/navbar.html" %} {{ content | safe }} {% include "./partials/footer.html"
