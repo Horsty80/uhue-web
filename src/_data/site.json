@@ -1,10 +1,13 @@
 {
   "title": "Uhue",
+  "name": "Horsty",
+  "author": "Horsty",
+  "url": "https://github.com/Horsty80/Uhue",
   "logo": {
-    "url": "static/img/web3-inline-logo.svg",
+    "url": "/static/img/web3-inline-logo.svg",
     "label": "label"
   },
   "favicon": {
-    "url": "static/img/web3-small-logo-without-shadow.svg"
+    "url": "/static/img/web3-small-logo-without-shadow.svg"
   }
 }

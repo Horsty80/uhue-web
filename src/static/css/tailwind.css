@@ -53,6 +53,9 @@ li {
   hidden absolute bg-uhue-dark md:bg-white text-white md:text-uhue-indigo
   md:relative md:flex;
 }
+.uhueContainer {
+  @apply container mx-auto h-screen flex flex-col items-center;
+}
 
 /* Syntax Highlighting*/
 
