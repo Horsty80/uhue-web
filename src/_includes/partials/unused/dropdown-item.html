@@ -1,0 +1,15 @@
+<li class="services group relative navLink-li">
+  <a class="navLink" href="/">Services</a>
+  <!-- DROPDOWN MENU -->
+  <ul
+    class="dropdown hidden group-hover:block bg-white py-[1em] px-0 absolute rounded-lg top-8 left-1/2 md:top-9"
+  >
+    {% if services %} {% for item in services %}
+    <li class="navLink-li sub-navLink-li">
+      <a class="navLink" href="services/{{ item.attributes.slug }}.html"
+        >{{ item.attributes.title }}</a
+      >
+    </li>
+    {% endfor %} {% endif %}
+  </ul>
+</li>

@@ -40,17 +40,15 @@ li {
 }
 
 .navLink {
-  @apply text-indigo-500;
+  @apply text-indigo-500 px-4 p-2;
 }
-.navLink-li {
-  @apply hover:bg-indigo-200 hover:rounded-md hover:transition-all
-  py-1 px-4;
+.underlineNavLink {
+  @apply bg-left-bottom bg-gradient-to-r from-indigo-500 to-indigo-500 bg-[length:0%_2px] 
+  bg-no-repeat transition-all duration-500 ease-out;
 }
-.sub-navLink-li {
-  @apply text-center py-[0.5em] px-[1em] w-[8em] hover:bg-indigo-200;
-}
+
 .navMenu {
-  @apply gap-[1em]  py-4 px-0 right-0 left-0 text-center text-lg 
+  @apply gap-[1em]  py-4 px-0 right-0 left-0 text-center text-xl 
   hidden absolute 
   md:relative md:flex;
 }

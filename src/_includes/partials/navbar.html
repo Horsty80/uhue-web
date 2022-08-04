@@ -3,7 +3,7 @@
   <a href="/" class="text-indigo-500 font-bold text-lg">
     {% if site.logo %}
     <img
-      class="h-8 w-auto sm:h-10"
+      class="h-8 w-auto sm:h-14"
       src="{{ site.favicon.url }}"
       alt="{{ site.logo.label }}"
       title="{{ site.title }}"
@@ -14,35 +14,28 @@
   <ul class="nav-links">
     <!-- USING CHECKBOX HACK -->
     <input class="hidden peer" type="checkbox" id="checkbox_toggle" />
-    <label for="checkbox_toggle" class="block md:hidden text-2xl select-none">&#9776;</label>
+    <label for="checkbox_toggle" class="block md:hidden text-4xl select-none">&#9776;</label>
     <!-- NAVIGATION MENUS -->
     <div class="navMenu peer-checked:block bg-uhue-gray text-white md:text-uhue-indigo md:bg-white">
-      <li class="navLink-li">
-        <a class="navLink" href="/">Home</a>
-      </li>
-      <li class="navLink-li">
-        <a class="navLink" href="/">About</a>
-      </li>
-      <li class="services group relative navLink-li">
-        <a class="navLink" href="/">Services</a>
-        <!-- DROPDOWN MENU -->
-        <ul
-          class="dropdown hidden group-hover:block bg-white py-[1em] px-0 absolute rounded-lg top-8 left-1/2 md:top-9"
+      <li>
+        <a class="navLink group" href="/"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Home</span></a
         >
-          {% if services %} {% for item in services %}
-          <li class="navLink-li sub-navLink-li">
-            <a class="navLink" href="services/{{ item.attributes.slug }}.html"
-              >{{ item.attributes.title }}</a
-            >
-          </li>
-          {% endfor %} {% endif %}
-        </ul>
       </li>
-      <li class="navLink-li">
-        <a class="navLink" href="/">Pricing</a>
+      <li>
+        <a class="navLink group" href="/about"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">About</span></a
+        >
       </li>
-      <li class="navLink-li">
-        <a class="navLink" href="/">Contact</a>
+      <li>
+        <a class="navLink group" href="/services"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Services</span></a
+        >
+      </li>
+      <li>
+        <a class="navLink group" href="/contact"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Contact</span></a
+        >
       </li>
     </div>
   </ul>
