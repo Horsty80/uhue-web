@@ -1194,6 +1194,10 @@ video {
   position: static;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
