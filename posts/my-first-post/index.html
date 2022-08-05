@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="icon" href="/static/img/favicon.ico" />
   </head>
-  <body class="flex flex-col h-screen">
-    <nav class="flex items-center justify-between pb-5 pl-5 text-uhue-indigo bg-white">
+  <body>
+    <section class="h-screen flex flex-col">
+      <nav class="flex items-center justify-between pb-5 pl-5 text-uhue-indigo bg-white">
   <!-- LOGO -->
   <a href="/" class="text-uhue-indigo font-bold text-lg">
     
@@ -59,8 +60,8 @@
   </ul>
 </nav>
 
-    <div class="flex flex-col flex-1 overflow-auto">
-      
+      <div class="flex flex-1 flex-col overflow-auto">
+        <div class="flex-1">
 <div class="container max-w-4xl mt-6  px-6">
     <div class="pb-5 mb-5 border-b border-gray-100">
         <h1 class="font-bold text-5xl">This is my first post</h1>
@@ -126,7 +127,8 @@
 <p>This web site is using <code>markedjs/marked</code>.</p>
 </article>
 
-</div> <footer class="bottom-0 text-center w-full py-4">
+</div></div>
+        <footer class="flex justify-center w-full py-4">
   <small class="text-gray-500"
     >Copyright © Horsty 2022. Made with 💜 by
     <a href="https://github.com/Horsty80/Uhue" target="_blank" class="underline">Horsty</a>
@@ -137,6 +139,7 @@
   </small>
 </footer>
 
-    </div>
+      </div>
+    </section>
   </body>
 </html>
