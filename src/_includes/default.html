@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="icon" href="/static/img/favicon.ico" />
   </head>
-  <body>
+  {# Hack for mobile #}
+  <body class="absolute inset-0">
     <section class="h-screen flex flex-col">
       {% include "./partials/navbar.html" %}
       <div class="flex flex-1 flex-col overflow-auto">
