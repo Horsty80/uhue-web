@@ -6,28 +6,17 @@ tag: homepage
 fixedFooter: true
 ---
 
-<div class="uhueContainer justify-center lg:h-screen">
-  {#
-  <h1 class="flex align-middle">
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{ title }}
-    </strong>
-    #} {% if site.logo %}
-    <img
-      class="w-auto"
-      src="{{ site.logo.url }}"
-      alt="{{ site.logo.label }}"
-      title="{{ site.title }}"
-    />
-    {% endif %} {#
-  </h1>
-  #}
+<div class="uhueContainer justify-center">
+  {% if site.logo %}
+  <img
+    class="w-auto"
+    src="{{ site.logo.url }}"
+    alt="{{ site.logo.label }}"
+    title="{{ site.title }}"
+  />
+  {% endif %}
 
-  <p>
-    Get Started by selecting your universe. {#
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code> #}
-  </p>
+  <p>Get Started by selecting your universe.</p>
 
   {% include "./_includes/partials/content.html" %}
 </div>

@@ -54,7 +54,7 @@ li {
   md:relative md:flex;
 }
 .uhueContainer {
-  @apply container mx-auto h-screen flex flex-col items-center;
+  @apply px-4 container flex flex-1 flex-col items-center;
 }
 
 /* Syntax Highlighting*/

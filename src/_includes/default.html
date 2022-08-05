@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="icon" href="/static/img/favicon.ico" />
   </head>
-  <body>
-    {% include "./partials/navbar.html" %} {{ content | safe }} {% include "./partials/footer.html"
-    %}
+  <body class="flex flex-col h-screen">
+    {% include "./partials/navbar.html" %}
+    <div class="flex flex-col flex-1 overflow-y-scroll scrollbar-hide">
+      {{ content | safe }} {% include "./partials/footer.html" %}
+    </div>
   </body>
 </html>
