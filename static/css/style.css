@@ -1311,8 +1311,8 @@ video {
   gap: 1rem;
 }
 
-.overflow-y-scroll {
-  overflow-y: scroll;
+.overflow-auto {
+  overflow: auto;
 }
 
 .rounded {
