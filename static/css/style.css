@@ -1634,7 +1634,7 @@ body pre[class*="language-"] {
 /* Avoid Chrome to see Safari hack */
 
 @supports (-webkit-touch-callout: none) {
-  body {
+  .h-screen {
     /* The hack for Safari */
     height: -webkit-fill-available;
   }
