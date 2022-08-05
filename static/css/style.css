@@ -1194,17 +1194,6 @@ video {
   position: static;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.inset-0 {
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1640,6 +1629,15 @@ body :not(pre) > code[class*="language-"],
 body pre[class*="language-"] {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+/* Avoid Chrome to see Safari hack */
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
 }
 
 .hover\:border-purple-400:hover {
