@@ -1,4 +1,3 @@
-const fs = require("fs");
 const fetch = require("node-fetch");
 const STAPIURL = `https://cms-api-dev.herokuapp.com`;
 
