@@ -1190,10 +1190,6 @@ video {
   margin-bottom: 0;
 }
 
-.static {
-  position: static;
-}
-
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1649,8 +1645,16 @@ body pre[class*="language-"] {
   background-size: 100% 2px;
 }
 
-.peer:checked ~ .peer-checked\:block {
-  display: block;
+.peer:checked ~ .peer-checked\:flex {
+  display: flex;
+}
+
+.peer:checked ~ .peer-checked\:h-screen {
+  height: 100vh;
+}
+
+.peer:checked ~ .peer-checked\:flex-col {
+  flex-direction: column;
 }
 
 .peer:checked ~ .peer-checked\:bg-uhue-dark {
