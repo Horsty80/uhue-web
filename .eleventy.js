@@ -7,7 +7,17 @@ module.exports = function (eleventyConfig) {
 
   // human readable date
   eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd LLL yyyy");
+    function formatMyDate(value, options, locale = "fr-FR") {
+      return new Date(value).toLocaleDateString(locale, options);
+    }
+    let options = {
+      // weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+
+    return formatMyDate(dateObj, options);
   });
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
