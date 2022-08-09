@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Garden</title>
+     
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="icon" href="/static/img/favicon.ico" />
+  </head>
+  <body>
+    <section class="h-screen flex flex-col">
+      <nav class="flex items-center justify-between pb-5 pl-5 text-uhue-indigo bg-white">
+  <!-- LOGO -->
+  <a href="/" class="text-uhue-indigo font-bold text-lg">
+    
+    <img
+      class="w-auto h-14"
+      src="/static/img/web3-small-logo-without-shadow.svg"
+      alt="label"
+      title="Uhue"
+    />
+    
+  </a>
+  <!-- NAVIGATION MENU -->
+  <ul class="nav-links">
+    <!-- USING CHECKBOX HACK -->
+    <input class="hidden peer" type="checkbox" id="checkbox_toggle" />
+    <label
+      for="checkbox_toggle"
+      class="peer-checked:text-white peer-checked:bg-uhue-dark p-6 block md:hidden text-4xl select-none"
+      >&#9776;</label
+    >
+    <!-- NAVIGATION MENUS -->
+    <div class="navMenu peer-checked:flex peer-checked:flex-col peer-checked:h-screen">
+      <li class="py-2">
+        <a class="navLink group" href="/"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Home</span></a
+        >
+      </li>
+      <li class="py-2">
+        <a class="navLink group" href="/about"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">About</span></a
+        >
+      </li>
+      <li class="py-2">
+        <a class="navLink group" href="/my-garden"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">My Garden</span></a
+        >
+      </li>
+      <li class="py-2">
+        <a class="navLink group" href="/contact"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Contact</span></a
+        >
+      </li>
+    </div>
+  </ul>
+</nav>
+
+      <div class="flex flex-1 flex-col overflow-auto">
+        <div class="flex-1">
+<div class="container max-w-3xl mt-6 px-6">
+  <h1 class="font-bold text-5xl pb-5 mb-5 border-b border-gray-100">My Garden</h1>
+
+  
+<section class="mt-15">
+    
+  <article class="my-8">
+    <h2 class="font-bold text-3xl text-gray-900 mb-2">
+      <a href=".">
+         My first service 
+      </a>
+    </h2>
+    <p class="text-base leading-6 text-gray-500 mb-3">
+      <time>
+         24 juil. 2022  by
+        <a> Horsty </a>
+      </time>
+    </p>
+    
+    <p class="text-lg text-gray-500 mb-3">&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+    
+
+    <p>
+      <a href="posts/first-service" class="text-indigo-500 font-bold text-lg">
+        Read more →
+      </a>
+    </p>
+  </article>
+   
+  <article class="my-8">
+    <h2 class="font-bold text-3xl text-gray-900 mb-2">
+      <a href=".">
+         My second service 
+      </a>
+    </h2>
+    <p class="text-base leading-6 text-gray-500 mb-3">
+      <time>
+         24 juil. 2022  by
+        <a> Horsty </a>
+      </time>
+    </p>
+    
+    <p class="text-lg text-gray-500 mb-3">&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+    
+
+    <p>
+      <a href="posts/second-service" class="text-indigo-500 font-bold text-lg">
+        Read more →
+      </a>
+    </p>
+  </article>
+   
+  <article class="my-8">
+    <h2 class="font-bold text-3xl text-gray-900 mb-2">
+      <a href=".">
+         Third Service 
+      </a>
+    </h2>
+    <p class="text-base leading-6 text-gray-500 mb-3">
+      <time>
+         25 juil. 2022  by
+        <a> Horsty </a>
+      </time>
+    </p>
+    
+    <p class="text-lg text-gray-500 mb-3">It&#39;s a third service to verify that the workflow of deployment is ok</p>
+    
+
+    <p>
+      <a href="posts/third-service" class="text-indigo-500 font-bold text-lg">
+        Read more →
+      </a>
+    </p>
+  </article>
+   
+  <article class="my-8">
+    <h2 class="font-bold text-3xl text-gray-900 mb-2">
+      <a href=".">
+         Draft Service 
+      </a>
+    </h2>
+    <p class="text-base leading-6 text-gray-500 mb-3">
+      <time>
+         1 août 2022  by
+        <a> Horsty </a>
+      </time>
+    </p>
+    
+    <p class="text-lg text-gray-500 mb-3">This service is in draft for the moment.
+It not will appear on the static web page.
+
+I update only the text, but i don&#39;t publish him for now</p>
+    
+
+    <p>
+      <a href="posts/draft-service" class="text-indigo-500 font-bold text-lg">
+        Read more →
+      </a>
+    </p>
+  </article>
+   
+</section>
+
+</div>
+</div>
+        <footer class="flex justify-center w-full py-4 text-center">
+  <small class="text-gray-500"
+    >Copyright © Horsty 2022. Made with 💜 by
+    <a href="https://github.com/Horsty80/Uhue" target="_blank" class="underline">Horsty</a>
+    •
+    <a href="https://github.com/Horsty80/Uhue" class="underline" target="_blank" rel="noopener"
+      >Go to Uhue support</a
+    >
+  </small>
+</footer>
+
+      </div>
+    </section>
+  </body>
+</html>
