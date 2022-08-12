@@ -1,0 +1,33 @@
+---
+layout: blog
+permalink: "my-services/"
+title: My Services
+---
+
+<section class="mt-15">
+  {% if services %} {% for item in services %} {% set service = item.attributes %}
+  <article class="my-8">
+    <h2 class="font-bold text-3xl text-gray-900 mb-2">
+      <a href="{{ post.url | url }}">
+        {% if service.title %} {{ service.title }} {% else %} Untitled {% endif %}
+      </a>
+    </h2>
+    <p class="text-base leading-6 text-gray-500 mb-3">
+      <time>
+        {% if service.publishedAt %} {{ service.publishedAt | readableDate }} {% else %} {{ date }}
+        {% endif %} by
+        <a>{% if service.author %} {{ service.author }} {% else %} {{ site.author }} {% endif %}</a>
+      </time>
+    </p>
+    {% if service.text %}
+    <p class="text-lg text-gray-500 mb-3">{{ service.text.substring(0, 200) }}</p>
+    {% endif %}
+
+    <p>
+      <a href="posts/{{ service.slug | url }}" class="text-indigo-500 font-bold text-lg">
+        Read more →
+      </a>
+    </p>
+  </article>
+  {% endfor %} {% endif %}
+</section>

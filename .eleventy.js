@@ -1,9 +1,22 @@
-const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownIt = require("markdown-it");
+
+const markdownItOptions = {
+  html: true,
+  breaks: true,
+  linkify: true,
+};
+const md = new markdownIt(markdownItOptions);
 
 module.exports = function (eleventyConfig) {
+  // Only for debugging without noise
+  // eleventyConfig.setQuietMode(true);
+
   // Merge data instead of overriding
   eleventyConfig.setDataDeepMerge(true);
+
+  // Add markdown filter
+  eleventyConfig.addFilter("markdown", (content) => md.render(content));
 
   // human readable date
   eleventyConfig.addFilter("readableDate", (dateObj) => {

@@ -1,13 +1,15 @@
 ---
 pagination:
-  data: services
+  data: posts
   size: 1
   alias: mygarden
-permalink: "my-garden/posts/{{ mygarden.attributes.slug }}/index.html"
+permalink: "my-garden/posts/{{ mygarden.attributes.postId }}/index.html"
 layout: posts
 eleventyComputed:
   publishedAt: "{{ mygarden.attributes.publishedAt }}"
 ---
 
 <h1>{{ mygarden.attributes.title }}</h1>
-<article>{{ mygarden.attributes.text }}</article>
+{% if mygarden.attributes.text %}
+<article>{{ mygarden.attributes.text | markdown | safe }}</article>
+{% endif %}

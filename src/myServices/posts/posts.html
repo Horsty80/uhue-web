@@ -1,0 +1,13 @@
+---
+pagination:
+  data: services
+  size: 1
+  alias: mygarden
+permalink: "my-services/posts/{{ mygarden.attributes.slug }}/index.html"
+layout: posts
+eleventyComputed:
+  publishedAt: "{{ mygarden.attributes.publishedAt }}"
+---
+
+<h1>{{ mygarden.attributes.title }}</h1>
+<article>{{ mygarden.attributes.text }}</article>
