@@ -1,7 +1,8 @@
 const fetch = require("node-fetch");
-require("dotenv").config();
+// require("dotenv").config();
 
-const STRAPI_URL = process.env.STRAPI_URL;
+const STRAPI_URL = "https://cms-api-dev.herokuapp.com";
+// const STRAPI_URL = process.env.STRAPI_URL;
 
 module.exports = async () => {
   const result = await fetch(`${STRAPI_URL}/api/services`)
