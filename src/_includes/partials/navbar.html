@@ -1,6 +1,6 @@
-<nav class="flex items-center justify-between pb-5 pl-5 text-uhue-indigo bg-white">
+<nav class="flex items-center justify-between pb-5 pl-5 bg-white text-uhue-indigo">
   <!-- LOGO -->
-  <a href="/" class="text-uhue-indigo font-bold text-lg">
+  <a href="/" class="text-lg font-bold text-uhue-indigo">
     {% if site.logo %}
     <img
       class="w-auto h-14"
@@ -16,7 +16,7 @@
     <input class="hidden peer" type="checkbox" id="checkbox_toggle" />
     <label
       for="checkbox_toggle"
-      class="peer-checked:text-white peer-checked:bg-uhue-dark p-6 block md:hidden text-4xl select-none"
+      class="block p-6 text-4xl select-none peer-checked:text-white peer-checked:bg-uhue-dark md:hidden"
       >&#9776;</label
     >
     <!-- NAVIGATION MENUS -->
@@ -27,22 +27,20 @@
         >
       </li>
       <li class="py-2">
+        <a class="navLink group" href="/blog"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Blog</span></a
+        >
+      </li>
+      <li class="py-2">
         <a class="navLink group" href="/about"
           ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">About</span></a
         >
       </li>
-      <li class="py-2">
-        <a class="navLink group" href="/my-garden"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">My Garden</span></a
+      <!-- <li class="py-2">
+        <a class="navLink group" href="/universes"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Mes Univers</span></a
         >
-      </li>
-      {#
-      <li class="py-2">
-        <a class="navLink group" href="/my-services"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">My Services</span></a
-        >
-      </li>
-      #}
+      </li> -->
       <li class="py-2">
         <a class="navLink group" href="/contact"
           ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Contact</span></a

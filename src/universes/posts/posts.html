@@ -1,0 +1,13 @@
+---
+pagination:
+  data: posts
+  size: 1
+  alias: myPost
+permalink: "universes/posts/{{ myPost.title | slugify  }}/index.html"
+layout: posts
+eleventyComputed:
+  publishedAt: "{{ myPost.publishedAt }}"
+---
+
+<h1>{{ myPost.title }}</h1>
+<article>{{ myPost.text }}</article>
