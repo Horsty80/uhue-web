@@ -39,3 +39,7 @@ FROM nginx:stable-alpine AS deploy
 RUN mkdir /app
 COPY --from=build /app/public /app
 COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+
+EXPOSE 8080
+EXPOSE 80
