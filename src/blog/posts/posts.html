@@ -7,7 +7,7 @@ permalink: "blog/posts/{{ myPost.title | slugify  }}/index.html"
 layout: posts
 eleventyComputed:
   publishedAt: "{{ myPost.date_created }}"
-  author: "{{site.author}}"
+  author: "{{ site.author }}"
 ---
 
 <h1>{{ myPost.title }}</h1>

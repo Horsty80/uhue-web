@@ -1,0 +1,98 @@
+name: Build dev and deploy to droplet
+
+on:
+  repository_dispatch:
+  push:
+    branches:
+      - main 
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: 11ty-front
+
+
+#3
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    outputs:
+      BRANCH: ${{ steps.vars.outputs.BRANCH }}
+      SHA_SHORT: ${{ steps.vars.outputs.SHA_SHORT }}
+      NUMBER_COMMIT: ${{ steps.vars.outputs.NUMBER_COMMIT }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Declare some variables
+        id: vars
+        shell: bash
+        run: |
+          echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+          echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "NUMBER_COMMIT=$(git rev-list --count HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Check some variables
+        run: |
+          echo "Branch: ${{ steps.vars.outputs.BRANCH }}"
+          echo "Sha: ${{ steps.vars.outputs.SHA_SHORT }}"
+          echo "Commit number: ${{ steps.vars.outputs.NUMBER_COMMIT }}"
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        # https://github.com/docker/setup-qemu-action
+        # Add support for more platforms with QEMU (optional)
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          # relative path to the place where source code with Dockerfile is located
+          context: .
+          # platforms: linux/amd64,linux/arm64
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
+          # Note: tags has to be all lower-case
+          tags: ${{env.REGISTRY}}/horsty80/${{env.IMAGE_NAME}}:${{ steps.vars.outputs.BRANCH }}.${{ steps.vars.outputs.NUMBER_COMMIT }}-${{ steps.vars.outputs.SHA_SHORT }}
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build_and_push
+
+    steps:
+      - name: Deploy front to Digital Ocean droplet via SSH action
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          passphrase: ${{ secrets.DEPLOYER_PASSPHRASE }}
+          key: ${{ secrets.DEPLOYER_SSH_KEY }}
+          envs: IMAGE_NAME,REGISTRY,{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          script: |
+            # Login to registry
+            # No need the repository is public
+            # docker login -u ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} -p ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} registry.digitalocean.com
+            # Stop running container
+            docker stop ${{env.IMAGE_NAME}}
+            # Remove old container
+            docker rm ${{env.IMAGE_NAME}}
+            # Run a new container from a new image
+            # -p external_container_port : inside_container_port
+            # -v "$(pwd)"/myApp/dev/config.front.js:/usr/share/nginx/html/config.js \
+            docker run -d \
+            --restart always \
+            --network uhue \
+            -p 80:80 \
+            --name ${{env.IMAGE_NAME}} \
+            ${{env.REGISTRY}}/horsty80/${{env.IMAGE_NAME}}:${{ needs.build_and_push.outputs.BRANCH }}.${{ needs.build_and_push.outputs.NUMBER_COMMIT }}-${{ needs.build_and_push.outputs.SHA_SHORT }}

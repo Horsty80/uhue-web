@@ -1,14 +1,14 @@
 ---
 layout: blog
-permalink: "blog/"
 title: Blog
 ---
 
 <section class="mt-15">
-  {% if posts %} {% for item in posts %} {% set post = item %}
+  {% if posts %} {% for item in posts %} {% set post = item %} {% set url = post.title | slugify |
+  url %} {% if post.related_universe_id.title === "Blog" %}
   <article class="my-8">
     <h2 class="mb-2 text-3xl font-bold text-gray-900">
-      <a href="{{ post.url | url }}">
+      <a href="/blog/posts/{{ url }}">
         {% if post.title %} {{ post.title }} {% else %} Untitled {% endif %}
       </a>
     </h2>
@@ -16,18 +16,19 @@ title: Blog
       <time>
         {% if post.date_created %} {{ post.date_created | readableDate }} {% else %} {{ date }} {%
         endif %} by
-        <a>{% if post.author %} {{ post.author }} {% else %} {{ site.author }} {% endif %}</a>
+        <a
+          >{% if post.author and post.author.pseudo %} {{ post.author.pseudo }} {% else %} {{
+          site.author }} {% endif %}</a
+        >
       </time>
     </p>
-    {% if post.text %}
-    <p class="mb-3 text-lg text-gray-500">{{ post.text.substring(0, 200) | safe }}</p>
+    {% if post.short_description %}
+    <p class="mb-3 text-lg text-gray-500">{{ post.short_description | safe }}</p>
     {% endif %}
 
     <p>
-      <a href="posts/{{ post.title | slugify | url }}" class="text-lg font-bold text-indigo-500">
-        Read more →
-      </a>
+      <a href="/blog/posts/{{ url }}" class="text-lg font-bold text-indigo-500"> Read more → </a>
     </p>
   </article>
-  {% endfor %} {% endif %}
+  {% endif %} {% endfor %} {% endif %}
 </section>
