@@ -5,7 +5,7 @@ title: Blog
 
 <section class="mt-15">
   {% if posts %} {% for item in posts %} {% set post = item %} {% set url = post.title | slugify |
-  url %} {% if post.related_universe_id.title === "Blog" %}
+  url %} {% if post.related_universe_id.slug === "blog" %}
   <article class="my-8">
     <h2 class="mb-2 text-3xl font-bold text-gray-900">
       <a href="/blog/posts/{{ url }}">
