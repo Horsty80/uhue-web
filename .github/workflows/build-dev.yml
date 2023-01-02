@@ -65,7 +65,7 @@ jobs:
           # platforms: linux/amd64,linux/arm64
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
-          secrets: |
+          build-args: |
             API_URL=${{ secrets.API_URL }}
           # Note: tags has to be all lower-case
           tags: ${{env.REGISTRY}}/horsty80/${{env.IMAGE_NAME}}:${{ steps.vars.outputs.BRANCH }}.${{ steps.vars.outputs.NUMBER_COMMIT }}-${{ steps.vars.outputs.SHA_SHORT }}

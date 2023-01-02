@@ -21,6 +21,10 @@ COPY . ./
 # Get back dependencies
 COPY --from=dependencies /app/node_modules ./node_modules
 
+#❗ ❗ ❗ The ARG value will be accessible to anyone that has access to the Docker image. 
+# If you are using a private registry, this is not a problem. 
+# If you are using a public registry, you should be careful about what you pass as an ARG.
+
 ARG API_URL
 ENV API_URL ${API_URL}
 
