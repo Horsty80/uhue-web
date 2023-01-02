@@ -78,25 +78,16 @@ jobs:
       - name: Deploy front to Digital Ocean droplet via SSH action
         uses: appleboy/ssh-action@v0.1.6
         with:
-          host: ${{ secrets.HOST }}
+          host: ${{ secrets.DIGITAL_OCEAN_HOST }}
           username: ${{ secrets.USERNAME }}
           passphrase: ${{ secrets.DEPLOYER_PASSPHRASE }}
           key: ${{ secrets.DEPLOYER_SSH_KEY }}
-          envs: IMAGE_NAME,REGISTRY,{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          envs: IMAGE_NAME,REGISTRY
           script: |
-            # Login to registry
-            # No need the repository is public
-            # docker login -u ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} -p ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} registry.digitalocean.com
-            # Stop running container
             docker stop ${{env.IMAGE_NAME}}
-            # Remove old container
             docker rm ${{env.IMAGE_NAME}}
-            # Run a new container from a new image
-            # -p external_container_port : inside_container_port
-            # -v "$(pwd)"/myApp/dev/config.front.js:/usr/share/nginx/html/config.js \
             docker run -d \
             --restart always \
-            --network uhue \
             -p 80:80 \
             --name ${{env.IMAGE_NAME}} \
             ${{env.REGISTRY}}/horsty80/${{env.IMAGE_NAME}}:${{ needs.build_and_push.outputs.BRANCH }}.${{ needs.build_and_push.outputs.NUMBER_COMMIT }}-${{ needs.build_and_push.outputs.SHA_SHORT }}
