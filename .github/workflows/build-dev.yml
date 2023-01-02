@@ -1,6 +1,7 @@
 name: Build dev and deploy to droplet
 
 on:
+  workflow_dispatch:
   repository_dispatch:
   push:
     branches:
