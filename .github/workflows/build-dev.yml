@@ -4,12 +4,11 @@ on:
   repository_dispatch:
   push:
     branches:
-      - main 
+      - main
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: 11ty-front
-
 
 #3
 jobs:
@@ -60,12 +59,13 @@ jobs:
         with:
           # relative path to the place where source code with Dockerfile is located
           context: .
+          file: ./Dockerfile.dev
           # platforms: linux/amd64,linux/arm64
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
           # Note: tags has to be all lower-case
           tags: ${{env.REGISTRY}}/horsty80/${{env.IMAGE_NAME}}:${{ steps.vars.outputs.BRANCH }}.${{ steps.vars.outputs.NUMBER_COMMIT }}-${{ steps.vars.outputs.SHA_SHORT }}
-  
+
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push
