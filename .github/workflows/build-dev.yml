@@ -1,4 +1,4 @@
-name: Build dev and deploy to droplet
+name: Build dev - copy static & deploy to droplet
 
 on:
   workflow_dispatch:
@@ -40,6 +40,43 @@ jobs:
           echo "Sha: ${{ steps.vars.outputs.SHA_SHORT }}"
           echo "Commit number: ${{ steps.vars.outputs.NUMBER_COMMIT }}"
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: create env file
+        run: |
+          touch .env
+          echo API_URL=${{ secrets.API_URL }} >> .env
+
+      - name: Build
+        run: pnpm run build
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         # https://github.com/docker/setup-qemu-action
@@ -65,8 +102,6 @@ jobs:
           # platforms: linux/amd64,linux/arm64
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
-          build-args: |
-            API_URL=${{ secrets.API_URL }}
           # Note: tags has to be all lower-case
           tags: ${{env.REGISTRY}}/horsty80/${{env.IMAGE_NAME}}:${{ steps.vars.outputs.BRANCH }}.${{ steps.vars.outputs.NUMBER_COMMIT }}-${{ steps.vars.outputs.SHA_SHORT }}
 
@@ -83,7 +118,6 @@ jobs:
           passphrase: ${{ secrets.DEPLOYER_PASSPHRASE }}
           key: ${{ secrets.DEPLOYER_SSH_KEY }}
           envs: IMAGE_NAME,REGISTRY
-          # Jexpose le port 80 du container et le rend accessible via le port 8080  http://localhost:8080
           script: |
             docker stop ${{env.IMAGE_NAME}}
             docker rm ${{env.IMAGE_NAME}}

@@ -1,44 +1,7 @@
-# Dockerfile
-
-# Use a Node 18 base image
-FROM node:18-alpine as base
-# Install pnpm globaly
-RUN npm install -g pnpm
-
-FROM base AS dependencies
-# Set the working directory to /app inside the container
-WORKDIR /app
-# Copy pnpm files
-COPY package.json pnpm-lock.yaml ./
-# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
-RUN pnpm i --frozen-lockfile
-
-FROM base AS build
-# Set the working directory to /app inside the container
-WORKDIR /app
-# Copy all app
-COPY . ./
-# Get back dependencies
-COPY --from=dependencies /app/node_modules ./node_modules
-
-#❗ ❗ ❗ The ARG value will be accessible to anyone that has access to the Docker image. 
-# If you are using a private registry, this is not a problem. 
-# If you are using a public registry, you should be careful about what you pass as an ARG.
-
-ARG API_URL
-ENV API_URL ${API_URL}
-
-# Build the app
-RUN pnpm build
-# Clean up docker
-RUN pnpm prune --prod
-
-FROM nginx:stable-alpine AS deploy
-# Move app to html directory for nginx redirection
+FROM nginx:stable-alpine
 
 WORKDIR /usr/share/nginx/html
 
-COPY --from=build /app/public .
+RUN rm index.html
 
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-
+COPY ./public/ ./
