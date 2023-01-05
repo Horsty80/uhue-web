@@ -3,6 +3,7 @@ name: Build dev - copy static & deploy to droplet
 on:
   workflow_dispatch:
   repository_dispatch:
+    types: [flow_deploy]
   push:
     branches:
       - main
