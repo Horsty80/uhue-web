@@ -5,12 +5,12 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "npm-run-all --parallel css eleventy browsersync",
+    "start": "npm-run-all --parallel css eleventy serve",
     "eleventy": "eleventy --watch",
     "debug": "set DEBUG=* & eleventy",
     "css": "postcss src/static/css/tailwind.css --o public/static/css/style.css --watch",
     "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production tailwindcss -i src/static/css/tailwind.css -o public/static/css/style.css",
-    "browsersync": "browser-sync start --server public --files public --port 8080 --no-notify --no-open"
+    "serve": "npx @11ty/eleventy --serve"
   },
   "keywords": [],
   "author": "Cyril Hue",
@@ -24,11 +24,12 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@tailwindcss/typography": "^0.5.4",
     "autoprefixer": "^10.4.8",
-    "browser-sync": "^2.27.10",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^10.0.0",
-    "tailwindcss": "^3.1.7"
+    "tailwindcss": "^3.1.7",
+    "@11ty/eleventy": "2.0.0-beta.3",
+    "@11ty/eleventy-plugin-vite": "^4.0.0"
   }
 }
