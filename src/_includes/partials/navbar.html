@@ -1,15 +1,18 @@
 <nav class="flex items-center justify-between pb-5 pl-5 bg-white text-uhue-indigo">
   <!-- LOGO -->
-  <a href="/" class="text-lg font-bold text-uhue-indigo">
-    {% if site.logo %}
-    <img
-      class="w-auto h-14"
-      src="{{ site.favicon.url }}"
-      alt="{{ site.logo.label }}"
-      title="{{ site.title }}"
-    />
-    {% endif %}
-  </a>
+  <div class="flex items-center justify-between space-x-5">
+    <a href="/" class="text-lg font-bold text-uhue-indigo">
+      {% if site.logo %}
+      <img
+        class="w-auto h-14"
+        src="{{ site.favicon.url }}"
+        alt="{{ site.logo.label }}"
+        title="{{ site.title }}"
+      />
+      {% endif %}
+    </a>
+    <span>Uhue</span>
+  </div>
   <!-- NAVIGATION MENU -->
   <ul class="nav-links">
     <!-- USING CHECKBOX HACK -->
@@ -32,18 +35,33 @@
         >
       </li>
       <li class="py-2">
-        <a class="navLink group" href="/about"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">About</span></a
+        <a class="navLink group" href="/tech"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Tech</span></a
         >
       </li>
-      <!-- <li class="py-2">
-        <a class="navLink group" href="/universes"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Mes Univers</span></a
+      <li class="py-2">
+        <a class="navLink group" href="/about"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Jardin</span></a
         >
-      </li> -->
+      </li>
+      <li class="py-2">
+        <a class="navLink group" href="/comics"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Comics</span></a
+        >
+      </li>
+      <li class="py-2">
+        <a class="navLink group" href="/games"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Jeux vidéo</span></a
+        >
+      </li>
       <li class="py-2">
         <a class="navLink group" href="/contact"
           ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Contact</span></a
+        >
+      </li>
+      <li class="py-2">
+        <a class="navLink group" href="/about"
+          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">About</span></a
         >
       </li>
     </div>

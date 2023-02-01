@@ -12,12 +12,11 @@
     <link rel="icon" href="/static/img/favicon.ico" />
   </head>
   <body>
-    <section class="h-screen flex flex-col">
+    <main class="container h-screen flex flex-col">
       {% include "./partials/navbar.html" %}
-      <div class="flex flex-1 flex-col overflow-auto">
-        <div class="flex-1">{{ content | safe }}</div>
-        {% include "./partials/footer.html" %}
+      <div class="flex flex-1 flex-col">
+        {{ content | safe }} {% include "./partials/footer.html" %}
       </div>
-    </section>
+    </main>
   </body>
 </html>
