@@ -36,9 +36,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addPassthroughCopy("./src/static/img");
-  eleventyConfig.addWatchTarget("./src/static/css/");
+  eleventyConfig.addPassthroughCopy("./src/static/css");
+  eleventyConfig.addWatchTarget("./src/static/css");
 
   return {
+    passthroughFileCopy: true,
     dir: {
       input: "src",
       output: "public",

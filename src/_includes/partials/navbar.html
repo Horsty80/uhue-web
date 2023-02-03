@@ -1,69 +1,20 @@
-<nav class="flex items-center justify-between pb-5 pl-5 bg-white text-uhue-indigo">
-  <!-- LOGO -->
-  <div class="flex items-center justify-between space-x-5">
-    <a href="/" class="text-lg font-bold text-uhue-indigo">
-      {% if site.logo %}
-      <img
-        class="w-auto h-14"
-        src="{{ site.favicon.url }}"
-        alt="{{ site.logo.label }}"
-        title="{{ site.title }}"
-      />
-      {% endif %}
-    </a>
-    <span>Uhue</span>
-  </div>
-  <!-- NAVIGATION MENU -->
-  <ul class="nav-links">
-    <!-- USING CHECKBOX HACK -->
-    <input class="hidden peer" type="checkbox" id="checkbox_toggle" />
-    <label
-      for="checkbox_toggle"
-      class="block p-6 text-4xl select-none peer-checked:text-white peer-checked:bg-uhue-dark md:hidden"
-      >&#9776;</label
-    >
-    <!-- NAVIGATION MENUS -->
-    <div class="navMenu peer-checked:flex peer-checked:flex-col peer-checked:h-screen">
-      <li class="py-2">
-        <a class="navLink group" href="/"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Home</span></a
-        >
+<div class="navbar">
+  <img class="logo" src="{{ site.favicon.url }}" alt="" />
+  <nav class="">
+    <ul id="menuList">
+      <li>
+        <a href="/blog">Blog</a>
       </li>
-      <li class="py-2">
-        <a class="navLink group" href="/blog"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Blog</span></a
-        >
+      <li>
+        <a href="/tech">Menu</a>
       </li>
-      <li class="py-2">
-        <a class="navLink group" href="/tech"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Tech</span></a
-        >
+      <li>
+        <a href="/about">About</a>
       </li>
-      <li class="py-2">
-        <a class="navLink group" href="/about"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Jardin</span></a
-        >
+      <li>
+        <a href="/comics">Comics</a>
       </li>
-      <li class="py-2">
-        <a class="navLink group" href="/comics"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Comics</span></a
-        >
-      </li>
-      <li class="py-2">
-        <a class="navLink group" href="/games"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Jeux vidéo</span></a
-        >
-      </li>
-      <li class="py-2">
-        <a class="navLink group" href="/contact"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">Contact</span></a
-        >
-      </li>
-      <li class="py-2">
-        <a class="navLink group" href="/about"
-          ><span class="group-hover:bg-[length:100%_2px] underlineNavLink">About</span></a
-        >
-      </li>
-    </div>
-  </ul>
-</nav>
+    </ul>
+  </nav>
+  <img class="menu-icon" src="/static/img/menu.png" alt="" onclick="togglemenu()" />
+</div>

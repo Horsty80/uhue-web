@@ -5,12 +5,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "npm-run-all --parallel css eleventy serve",
-    "eleventy": "eleventy --watch",
+    "start": "npx @11ty/eleventy --serve",
     "debug": "set DEBUG=* & eleventy",
-    "css": "postcss src/static/css/tailwind.css --o public/static/css/style.css --watch",
-    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production tailwindcss -i src/static/css/tailwind.css -o public/static/css/style.css",
-    "serve": "npx @11ty/eleventy --serve"
+    "build": "cross-env NODE_ENV=production eleventy"
   },
   "keywords": [],
   "author": "Cyril Hue",
@@ -18,18 +15,15 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "markdown-it": "^13.0.1",
-    "node-fetch": "2"
+    "node-fetch": "2",
+    "prettier": "^2.8.3"
   },
   "dependencies": {
+    "@11ty/eleventy": "2.0.0-beta.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
-    "@tailwindcss/typography": "^0.5.4",
-    "autoprefixer": "^10.4.8",
+    "@11ty/eleventy-plugin-vite": "^4.0.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
-    "npm-run-all": "^4.1.5",
-    "postcss-cli": "^10.0.0",
-    "tailwindcss": "^3.1.7",
-    "@11ty/eleventy": "2.0.0-beta.3",
-    "@11ty/eleventy-plugin-vite": "^4.0.0"
+    "npm-run-all": "^4.1.5"
   }
 }

@@ -1,0 +1,292 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #e3ecf4;
+  --blue: #0034ff;
+  --blue-light: #0af3f4;
+}
+
+/* "uhue-gray": "#E3ECF4",
+        "uhue-dark": "#0E1531",
+        "uhue-indigo": "#6366f1",
+        "uhue-indigo-pop": "#7416EC",
+        "uhue-bluegreen": "#0F8094",
+        "uhue-lightblue": "#00D9FE", */
+
+@font-face {
+  font-family: regularFont;
+  src: url("fonts/montserrat.regular.ttf");
+}
+@font-face {
+  font-family: boldFont;
+  src: url("css/fonts/montserrat.bold.ttf");
+}
+
+/* .underlineNavLink {
+  @apply bg-left-bottom bg-gradient-to-r from-white to-white md:from-uhue-indigo md:to-uhue-indigo 
+  bg-[length:0%_2px] bg-no-repeat transition-all duration-500 ease-out;
+} */
+
+/* Avoid Chrome to see Safari hack */
+/* @supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding-left: 8%;
+  padding-right: 8%;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.menu-icon {
+  width: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  color: #6366f1;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px 0;
+}
+.col-1 {
+  flex-basis: 40%;
+  position: relative;
+  margin-left: 50px;
+}
+.col-1 h2 {
+  font-size: 54px;
+}
+.col-1 h3 {
+  font-size: 30px;
+  color: #707070;
+  font-weight: 100;
+  margin: 20px 0 10px;
+}
+.col-1 p {
+  font-size: 16px;
+  color: #b7b7b7;
+  font-weight: 100;
+}
+.col-1 h4 {
+  margin: 30px 0;
+  font-size: 20px;
+}
+
+button {
+  width: 140px;
+  border: 0;
+  padding: 12px 10px;
+  outline: nonde;
+  color: #fff;
+  background: linear-gradient(to right, #6366f1, #7416ec);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: width 0.5s;
+}
+
+button img {
+  width: 30px;
+  display: none;
+}
+button:hover img {
+  display: block;
+}
+
+button:hover {
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col-1::before {
+  content: "";
+  width: 10px;
+  height: 57%;
+  background: linear-gradient(#6366f1, #7416ec);
+  position: absolute;
+  left: -40px;
+  top: 8px;
+}
+
+.col-2 {
+  flex-basis: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.col-2 .controller {
+  width: 90%;
+}
+
+.color-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(#6366f1, #7416ec);
+  border-radius: 20px 0 0 20px;
+  height: 100%;
+  width: 80%;
+  z-index: -1;
+  transform: translateX(150px);
+}
+
+.add-btn img {
+  width: 35px;
+  margin-bottom: 5px;
+}
+
+.add-btn {
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+.social-links img {
+  height: 13px;
+  margin: 20px;
+  cursor: pointer;
+}
+.social-links {
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+  text-align: center;
+}
+footer small {
+  color: gray;
+}
+footer small a {
+  color: inherit;
+  text-decoration: inherit;
+  text-decoration-line: underline;
+}
+
+@media only screen and (max-width: 700px) {
+  nav ul {
+    width: 100%;
+    background: linear-gradient(#6366f1, #7416ec);
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 2;
+  }
+  nav ul li {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  nav ul li a {
+    color: #fff;
+  }
+  .menu-icon {
+    display: block;
+  }
+  #menuList {
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .row {
+    flex-direction: column-reverse;
+    margin: 50px 0;
+  }
+  .col-2 {
+    flex-basis: 100%;
+    margin-bottom: 50px;
+  }
+  .col-2 .controller {
+    width: 77%;
+  }
+  .color-box {
+    transform: translateX(75px);
+  }
+  .col-1 {
+    flex-basis: 100%;
+  }
+  .col-1 h2 {
+    font-size: 35px;
+  }
+  .col-1 h3 {
+    font-size: 15px;
+  }
+}

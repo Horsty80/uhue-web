@@ -6,15 +6,42 @@ tag: homepage
 fixedFooter: true
 ---
 
-<section class="flex">
-  <div class="w-1/3 p-8">
-    <h2 class="font-bold text-6xl text-left leading-tight mb-4">Titre de la page d'accueil</h2>
-    <p class="text-left text-lg mb-8">
+<section class="row">
+  <div class="col-1">
+    <h2>Titre de la page d'accueil</h2>
+    <h3>Some subtitle</h3>
+    <p>
       Rejoignez l'aventure sur mon blog dédié au développement web, aux comics, aux mangas, aux jeux
-      vidéo et à tous mes centres d'intérêt ! Préparez-vous pour des actualités passionnantes, des
-      critiques incroyables et des astuces indispensables.
+      vidéo et à tous mes centres d'intérêt !
     </p>
-    <div class="flex justify-between">
+    <h4>It's just before cta</h4>
+    <button type="button">Newsletter<img src="/static/img/arrow.png" alt="" /></button>
+  </div>
+  <div class="col-2">
+    <img
+      class="controller"
+      src="http://admin.dev.uhue.fr/assets/8c352dea-9621-4c38-8a73-0bd22688c0e1"
+      alt="Image de la page d'accueil"
+    />
+    <div class="color-box"></div>
+    <div class="add-btn">
+      <img src="/static/img/add.png" alt="" />
+      <p><small>En savoir plus</small></p>
+    </div>
+  </div>
+
+  <!-- <div class="flex flex-wrap p-4 md:w-1/3 md:p-8">
+    <div>
+      <h2 class="bg-red-200 font-bold text-5xl md:text-6xl text-left leading-tight mb-4">
+        Titre de la page d'accueil
+      </h2>
+      <p class="bg-blue-200 text-left text-lg">
+        Rejoignez l'aventure sur mon blog dédié au développement web, aux comics, aux mangas, aux
+        jeux vidéo et à tous mes centres d'intérêt ! Préparez-vous pour des actualités
+        passionnantes, des critiques incroyables et des astuces indispensables.
+      </p>
+    </div>
+    <div class="bg-yellow-200 space-x-5 md:flex md:justify-between">
       <button class="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600">
         S'abonner à la newsletter
       </button>
@@ -22,21 +49,18 @@ fixedFooter: true
         Formulaire de contact
       </button>
     </div>
-  </div>
-  <div class="w-2/3 p-8">
-    <img
-      class="h-5/6 ml-auto object-cover rounded-lg"
-      src="http://admin.dev.uhue.fr/assets/a9c82138-522f-4235-a040-71fe2932e086"
-      alt="Image de la page d'accueil"
-    />
-  </div>
+  </div> -->
 </section>
 
+<div class="social-links">
+  <img src="/static/img/fb.png" alt="" />
+  <img src="/static/img/ig.png" alt="" />
+  <img src="/static/img/tw.png" alt="" />
+</div>
 <section class="py-2">
   <div class="container">
     <div class="flex flex-wrap">
       <div class="w-1/3 p-4">
-        <!-- Card 1 -->
         <div class="bg-white rounded overflow-hidden shadow-lg mb-6">
           <img src="https://via.placeholder.com/400x200" alt="Image de la carte 1" class="w-full" />
           <div class="px-6 py-4">
@@ -45,7 +69,6 @@ fixedFooter: true
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="bg-white rounded overflow-hidden shadow-lg">
           <img src="https://via.placeholder.com/400x200" alt="Image de la carte 2" class="w-full" />
           <div class="px-6 py-4">
@@ -55,7 +78,6 @@ fixedFooter: true
         </div>
       </div>
       <div class="w-2/3 p-4">
-        <!-- Card 3 -->
         <div class="bg-white rounded overflow-hidden shadow-lg">
           <img src="https://via.placeholder.com/800x400" alt="Image de la carte 3" class="w-full" />
           <div class="px-6 py-4">
