@@ -11,18 +11,21 @@
 }
 
 @media (min-width: 30em) {
+  /*  on medium screens, we want 2 columns */
   .band {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 60em) {
+  /*  on large screens, we want 3 columns */
   .band {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .item-1 {
-    grid-column: 1 / span 2;
+  /* on large screens, we want the second item to span 2 columns */
+  .item-2 {
+    grid-column: 2 / span 2;
   }
 
   .item-1 h1 {
