@@ -39,7 +39,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+body {
+  height: 100vh;
+}
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -112,7 +114,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #000;
-  font-size: 14px;
+  font-size: 22px;
 }
 
 nav ul li a:hover {
@@ -123,7 +125,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 100px 0;
+  margin: 40px 0 100px 0;
 }
 .col-1 {
   flex-basis: 40%;
