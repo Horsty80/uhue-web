@@ -1,0 +1,42 @@
+.blog {
+  margin: 40px 0 100px 0;
+}
+
+.blog .highlighted-posts {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 30px;
+  height: 30vw;
+}
+
+@media (min-width: 30em) {
+  /*  on medium screens, we want 2 columns */
+  .blog .highlighted-posts {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 70em) {
+  .blog .highlighted-posts {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .blog .highlighted-posts .first {
+    grid-row: 1 / span 2;
+    justify-content: center;
+  }
+}
+
+.blog .highlighted-posts .item {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  /* Centre une image on top of the card */
+}
+.blog .highlighted-posts .item .thumb {
+  height: 200px;
+}
