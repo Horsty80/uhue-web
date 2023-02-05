@@ -7,7 +7,6 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 30px;
-  height: 30vw;
 }
 .blog .highlighted-posts .item {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -23,10 +22,10 @@
 }
 .preview {
   height: 100%;
-  padding-left: 16px;
   display: flex;
   flex: 1;
   flex-direction: column;
+  align-items: center;
 }
 .content {
   flex: 1;
@@ -41,8 +40,12 @@
   .blog .highlighted-posts {
     grid-template-columns: 1fr;
   }
-  .blog .highlighted-posts .item:not(.first) {
+  .blog .highlighted-posts .item {
     flex-direction: row;
+  }
+  .preview {
+    padding-left: 16px;
+    align-items: flex-start;
   }
 }
 @media (min-width: 70em) {
