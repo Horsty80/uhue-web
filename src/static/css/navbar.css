@@ -9,6 +9,11 @@ nav {
   height: 100px;
   background-color: #fff;
 }
+
+nav .logo-img {
+  height: 50px;
+  margin-right: 10px;
+}
 nav .logo {
   float: left;
   width: 40%;
