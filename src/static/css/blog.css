@@ -9,11 +9,40 @@
   grid-row-gap: 30px;
   height: 30vw;
 }
+.blog .highlighted-posts .item {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.1s ease-in;
+  cursor: pointer;
+}
+.blog .highlighted-posts .item .thumb {
+  height: 200px;
+}
+.preview {
+  height: 100%;
+  padding-left: 16px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+}
+
+.blog .highlighted-posts .item:hover {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
 
 @media (min-width: 30em) {
   /*  on medium screens, we want 2 columns */
   .blog .highlighted-posts {
     grid-template-columns: 1fr;
+  }
+  .blog .highlighted-posts .item:not(.first) {
+    flex-direction: row;
   }
 }
 @media (min-width: 70em) {
@@ -26,17 +55,9 @@
 
   .blog .highlighted-posts .first {
     grid-row: 1 / span 2;
-    justify-content: center;
+    justify-content: space-evenly;
   }
-}
-
-.blog .highlighted-posts .item {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  padding: 20px;
-  align-items: center;
-  /* Centre une image on top of the card */
-}
-.blog .highlighted-posts .item .thumb {
-  height: 200px;
+  .blog .highlighted-posts .item:not(.first) {
+    flex-direction: row;
+  }
 }
