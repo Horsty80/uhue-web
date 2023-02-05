@@ -36,6 +36,8 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
@@ -74,6 +76,8 @@ body {
 
 .container {
   width: 100%;
+  position: relative;
+  margin-top: 100px;
   min-height: 100vh;
   padding-left: 8%;
   padding-right: 8%;
@@ -82,13 +86,13 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-.navbar {
+/* .navbar {
   width: 100%;
   display: flex;
   align-items: center;
-}
+} */
 
-.logo {
+/* .logo {
   width: 50px;
   cursor: pointer;
   margin-top: 16px;
@@ -119,7 +123,7 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #6366f1;
-}
+} */
 
 .row {
   display: flex;
@@ -245,7 +249,7 @@ footer small a {
 }
 
 @media only screen and (max-width: 700px) {
-  nav ul {
+  /* nav ul {
     width: 100%;
     background: linear-gradient(#6366f1, #7416ec);
     position: absolute;
@@ -267,7 +271,7 @@ footer small a {
   #menuList {
     overflow: hidden;
     transition: 0.5s;
-  }
+  } */
   .row {
     flex-direction: column-reverse;
     margin: 50px 0;

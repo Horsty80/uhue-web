@@ -14,22 +14,8 @@
   <body>
     <!-- <main class="container h-screen flex flex-col"> -->
     <main class="container">
-      {% include "./partials/navbar.html" %} {{ content | safe }} 
-      {% include "./partials/footer.html" %}
+      {% include "./partials/navbar-bis.html" %} {{ content | safe }} {% include
+      "./partials/footer.html" %}
     </main>
-
-    <script>
-      var menuList = document.getElementById("menuList");
-
-      menuList.style.maxHeight = "0px";
-
-      function togglemenu() {
-        if (menuList.style.maxHeight == "0px") {
-          menuList.style.maxHeight = "130px";
-        } else {
-          menuList.style.maxHeight = "0px";
-        }
-      }
-    </script>
   </body>
 </html>
