@@ -1,22 +1,22 @@
 <link rel="stylesheet" href="/static/css/navbar.css" />
-
-<div class="navbar">
-  <img class="logo" src="{{ site.favicon.url }}" alt="" />
-  <nav class="">
-    <ul id="menuList">
-      <li>
-        <a href="/blog">Blog</a>
-      </li>
-      <li>
-        <a href="/tech">Menu</a>
-      </li>
-      <li>
-        <a href="/about">About</a>
-      </li>
-      <li>
-        <a href="/comics">Comics</a>
-      </li>
-    </ul>
-  </nav>
-  <img class="menu-icon" src="/static/img/menu.png" alt="" onclick="togglemenu()" />
-</div>
+<nav>
+  <input id="nav-toggle" type="checkbox" />
+  <div class="logo">
+    <img class="logo-img" src="{{ site.favicon.url }}" alt="" /><strong>Uhue</strong>
+  </div>
+  <ul class="links">
+    <li><a href="/">Accueil</a></li>
+    <li><a href="/blog">Développement web</a></li>
+    <!-- <li><a href="#books">Comics & Mangas</a></li> -->
+    <!-- <li><a href="#games">Jeux vidéo & Rétro</a></li> -->
+    <!-- <li><a href="#lego">Légo</a></li> -->
+    <!-- <li><a href="#photos">Photos</a></li> -->
+    <!-- <li><a href="/contact">Contact</a></li> -->
+    <!-- <li><a href="/about">À propos</a></li> -->
+  </ul>
+  <label for="nav-toggle" class="icon-burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </label>
+</nav>
