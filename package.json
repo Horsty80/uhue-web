@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
+    "start": "rm -rf public/ & rm -rf .cache/ & npx @11ty/eleventy --serve",
     "debug": "set DEBUG=* & eleventy",
     "build": "cross-env NODE_ENV=production eleventy"
   },
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "2.0.0-beta.3",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@11ty/eleventy-plugin-vite": "^4.0.0",
     "cross-env": "^7.0.3",

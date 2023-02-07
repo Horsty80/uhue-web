@@ -7,3 +7,4 @@ public/
 _tmp/
 testStatic/
 Dockerfile.static.dev
+.cache

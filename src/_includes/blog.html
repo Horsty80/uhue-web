@@ -1,7 +1,4 @@
----
-layout: default
----
-
+{% if devBlog %}
 <link rel="stylesheet" href="/static/css/blog.css" />
 <section class="blog">
   <div class="highlighted-posts">
@@ -62,3 +59,4 @@ layout: default
   </div>
   <!-- <main>{{ content | safe }}</main> -->
 </section>
+{% endif %}

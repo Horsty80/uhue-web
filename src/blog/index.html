@@ -1,34 +1,5 @@
 ---
-layout: blog
-title: Blog
+layout: default
 ---
 
-<section class="mt-15">
-  {% if posts %} {% for item in posts %} {% set post = item %} {% set url = post.title | slugify |
-  url %} {% if post.related_universe_id.slug === "blog" %}
-  <article class="my-8">
-    <h2 class="mb-2 text-3xl font-bold text-gray-900">
-      <a href="/blog/posts/{{ url }}">
-        {% if post.title %} {{ post.title }} {% else %} Untitled {% endif %}
-      </a>
-    </h2>
-    <p class="mb-3 text-base leading-6 text-gray-500">
-      <time>
-        {% if post.date_created %} {{ post.date_created | readableDate }} {% else %} {{ date }} {%
-        endif %} by
-        <a
-          >{% if post.author and post.author.pseudo %} {{ post.author.pseudo }} {% else %} {{
-          site.author }} {% endif %}</a
-        >
-      </time>
-    </p>
-    {% if post.short_description %}
-    <p class="mb-3 text-lg text-gray-500">{{ post.short_description | safe }}</p>
-    {% endif %}
-
-    <p>
-      <a href="/blog/posts/{{ url }}" class="text-lg font-bold text-indigo-500"> Read more → </a>
-    </p>
-  </article>
-  {% endif %} {% endfor %} {% endif %}
-</section>
+<section class="blog_container">{% include "src/_includes/blog.html" %}</section>
