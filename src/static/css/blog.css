@@ -8,6 +8,16 @@
   grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 30px;
 }
+.blog .highlighted-posts .item small {
+  padding: 20px 20px 20px 0;
+  display: flex;
+  width: 100%;
+  color: gray;
+}
+.blog .highlighted-posts .item small span {
+  margin: 0 5px;
+}
+
 .blog .highlighted-posts .item {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -71,8 +81,10 @@
   .blog .highlighted-posts .item {
     flex-direction: row;
   }
-  .preview {
+  .item:not(.first) .preview {
     padding-left: 16px;
+  }
+  .preview {
     align-items: flex-start;
   }
 }
