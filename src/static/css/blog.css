@@ -16,9 +16,20 @@
   flex-direction: column;
   transition: all 0.1s ease-in;
   cursor: pointer;
+  border-radius: 15px;
+  border: 1px solid var(--blue);
 }
 .blog .highlighted-posts .item .thumb {
-  height: 200px;
+  max-height: 100%;
+}
+.item-img.first,
+.item-img:not(.item-img.first) {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  margin: auto auto;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 .preview {
   height: 100%;
@@ -35,6 +46,23 @@
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
+.encart {
+  display: none;
+  position: absolute;
+  background-color: white;
+  height: 40px;
+  padding: 20px;
+  bottom: 30px;
+  left: 0;
+  color: var(--black);
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 2px 2px 0;
+}
+
+/**
+  * On medium screens, we want 2 columns
+  */
 @media (min-width: 30em) {
   /*  on medium screens, we want 2 columns */
   .blog .highlighted-posts {
@@ -48,6 +76,16 @@
     align-items: flex-start;
   }
 }
+@media (min-width: 47em) {
+  .encart {
+    display: flex;
+  }
+}
+
+/**
+  * On large screens, we want 2 columns
+  * On large screens, we want the first item to span 2 rows
+  */
 @media (min-width: 70em) {
   .blog .highlighted-posts {
     grid-template-columns: repeat(2, 1fr);
@@ -56,11 +94,25 @@
     grid-row-gap: 20px;
   }
 
-  .blog .highlighted-posts .first {
+  .blog .highlighted-posts .item.first {
     grid-row: 1 / span 2;
     justify-content: space-evenly;
+    flex-direction: column;
   }
   .blog .highlighted-posts .item:not(.first) {
     flex-direction: row;
+  }
+
+  .item-img.first {
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: var(--gray);
   }
 }

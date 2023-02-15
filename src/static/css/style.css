@@ -2,16 +2,15 @@
   --white: #fff;
   --black: #000;
   --gray: #e3ecf4;
+  --uhue-gray: #e3ecf4;
   --blue: #0034ff;
   --blue-light: #0af3f4;
+  --uhue-dark: #0e1531;
+  --uhue-indigo: #6366f1;
+  --uhue-indigo-pop: #7416ec;
+  --uhue-bluegreen: #0f8094;
+  --uhue-lightblue: #00d9fe;
 }
-
-/* "uhue-gray": "#E3ECF4",
-        "uhue-dark": "#0E1531",
-        "uhue-indigo": "#6366f1",
-        "uhue-indigo-pop": "#7416EC",
-        "uhue-bluegreen": "#0F8094",
-        "uhue-lightblue": "#00D9FE", */
 
 @font-face {
   font-family: regularFont;
