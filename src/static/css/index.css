@@ -1,17 +1,3 @@
-
-button {
-  transition: width 0.5s;
-}
-button:hover img {
-  display: block;
-}
-button:hover {
-  width: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .uhueColumn::before {
   content: "";
   width: 10px;
