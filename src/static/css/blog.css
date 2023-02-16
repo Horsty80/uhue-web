@@ -17,7 +17,6 @@
 .blog .highlighted-posts .item small span {
   margin: 0 5px;
 }
-
 .blog .highlighted-posts .item {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -49,6 +48,10 @@
   align-items: center;
 }
 .content {
+  padding: 15px 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
   flex: 1;
 }
 
