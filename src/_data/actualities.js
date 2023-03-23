@@ -5,7 +5,7 @@ const API_URL = process.env.API_URL;
 async function getActualities() {
   try {
     let url = `${API_URL}posts?fields=*,related_universe_id.slug,author.pseudo&limit=6`;
-
+    console.log("fetching url: ", url);
     /* This returns a promise */
     const { data } = await EleventyFetch(url, {
       removeUrlQueryParams: true,
